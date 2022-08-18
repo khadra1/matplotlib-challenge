@@ -1,10 +1,5 @@
 # Matplotlib: The Power of Plots
 
-What good is data without a good plot to tell the story?
-
-In this homework assignment, you’ll apply what you've learned about Matplotlib and to a real-world situation and dataset.
-## Background
-
 I've been given access to the complete data from recent animal study from Pymaceuticals Inc., a new pharmaceutical company that specializes in anti-cancer pharmaceuticals. Recently, it began screening for potential treatments for squamous cell carcinoma (SCC), a commonly occurring form of skin cancer.
 
 In this study, 249 mice identified with SCC tumor growth were treated with a variety of drug regimens. Over the course of 45 days, tumor development was observed and measured. The purpose of this study was to compare the performance of Pymaceuticals' drug of interest, Capomulin, versus the other treatment regimens. 
