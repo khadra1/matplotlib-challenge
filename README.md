@@ -1,28 +1,44 @@
-# matplotlib-challenge
-Matplotlib
-
-# Unit 5 Homework: The Power of Plots
+# Matplotlib: The Power of Plots
 
 What good is data without a good plot to tell the story?
 
 In this homework assignment, you’ll apply what you've learned about Matplotlib and to a real-world situation and dataset.
 ## Background
 
-You've just  joined Pymaceuticals Inc., a new pharmaceutical company that specializes in anti-cancer pharmaceuticals. Recently, it began screening for potential treatments for squamous cell carcinoma (SCC), a commonly occurring form of skin cancer.
+I've been given access to the complete data from recent animal study from Pymaceuticals Inc., a new pharmaceutical company that specializes in anti-cancer pharmaceuticals. Recently, it began screening for potential treatments for squamous cell carcinoma (SCC), a commonly occurring form of skin cancer.
 
-As a senior data analyst at the company, you've been given access to the complete data from their most recent animal study. In this study, 249 mice identified with SCC tumor growth were treated with a variety of drug regimens. Over the course of 45 days, tumor development was observed and measured. The purpose of this study was to compare the performance of Pymaceuticals' drug of interest, Capomulin, versus the other treatment regimens. 
+In this study, 249 mice identified with SCC tumor growth were treated with a variety of drug regimens. Over the course of 45 days, tumor development was observed and measured. The purpose of this study was to compare the performance of Pymaceuticals' drug of interest, Capomulin, versus the other treatment regimens. 
 
-The executive team has tasked you with generating all of the tables and figures needed for the technical report of the study. They have also asked for a top-level summary of the study results.
+I generagted all of the tables and figures needed for the technical report of the study. Including a top-level summary of the study results.
 
-## Instructions
-
-Your tasks are to do the following:
+### Steps taken
 
 * Prepare the data.
 
-* Generate summary statistics.
+     *Before data cleaning: 1893 rows and 249 number of unique Mous IDs
+    ![Screenshot 2022-08-18 at 19 38 12](https://user-images.githubusercontent.com/67019030/185469534-70ded001-61c3-44b7-974f-e2e58951d7b6.png)
+ 
+     *After data cleaning:  1888 rows and 249 number of unique Mous IDs
+     ![Screenshot 2022-08-18 at 19 35 11](https://user-images.githubusercontent.com/67019030/185469046-bf82dfe6-0e73-4f68-9605-9178b2793f22.png)
 
-* Create bar charts and pie charts.
+* Summary statistics.
+  ![Screenshot 2022-08-18 at 19 43 33](https://user-images.githubusercontent.com/67019030/185470509-673bc57e-aa04-422e-a93f-c9d54515a1fc.png)
+
+
+* Bar charts: 
+    *Bar plot showing the total number of timepoints for all mice tested for each drug regimen using Pandas:
+    ![pymaceuticals_barplot](https://user-images.githubusercontent.com/67019030/185470994-2f1b7b75-71aa-4752-b7ab-b45857ddbeb4.png)
+
+    * Bar plot showing the total number of timepoints for all mice tested for each drug regimen using Matplotlib's pyplot.
+    ![pymaceuticals_plyplot](https://user-images.githubusercontent.com/67019030/185471649-bd4945e1-eb54-48eb-a050-25df225f0cca.png)
+
+* Create pie charts.
+    1. A pie plot showing the distribution of female versus male mice using Pandas
+      ![pymaceuticals_pieplot](https://user-images.githubusercontent.com/67019030/185472110-34ce8d70-173e-4200-bfc6-f68477033a73.png)
+      
+    2. A pie plot showing the distribution of female versus male mice using pyplot
+      ![pieplyplot](https://user-images.githubusercontent.com/67019030/185472342-94036481-9918-42d1-ab0f-034670f734ec.png)
+
 
 * Calculate quartiles, find outliers, and create a box plot.
 
