@@ -1,6 +1,6 @@
 # Matplotlib: The Power of Plots
 
-I've been given access to the complete data from recent animal study from Pymaceuticals Inc., a new pharmaceutical company that specializes in anti-cancer pharmaceuticals. Recently, it began screening for potential treatments for squamous cell carcinoma (SCC), a commonly occurring form of skin cancer.
+I used the complete data from recent animal study from Pymaceuticals Inc., a new pharmaceutical company that specializes in anti-cancer pharmaceuticals. Recently, it began screening for potential treatments for squamous cell carcinoma (SCC), a commonly occurring form of skin cancer.
 
 In this study, 249 mice identified with SCC tumor growth were treated with a variety of drug regimens. Over the course of 45 days, tumor development was observed and measured. The purpose of this study was to compare the performance of Pymaceuticals' drug of interest, Capomulin, versus the other treatment regimens. 
 
@@ -18,8 +18,8 @@ I generagted all of the tables and figures needed for the technical report of th
      
        * ![Screenshot 2022-08-18 at 19 35 11](https://user-images.githubusercontent.com/67019030/185469046-bf82dfe6-0e73-4f68-9605-9178b2793f22.png)
 
-#### Summary statistics
-**Two summary statistics DataFrames:***
+## Summary statistics
+**Two summary statistics DataFrames:**
 
 First table using the `groupby` method to generate the mean, median, variance, standard deviation, and SEM of the tumor volume for each drug regimen. This resulted in five unique series objects which was combined into a single summary statistics DataFrames:
  
@@ -31,7 +31,7 @@ Second table using the `agg` method to produce the same summary statistics table
 
 
 
-#### Bar charts showing the total number of timepoints for all mice tested for each drug regimen:
+## Bar charts showing the total number of timepoints for all mice tested for each drug regimen:
 
 <table>
   <tr>
@@ -39,61 +39,70 @@ Second table using the `agg` method to produce the same summary statistics table
      <td>Using Matplotlib's `pyplot` methods</td>
   </tr>
   <tr>
-    <td><img src="Pymaceuticals/Images/pymaceuticals_barplot.png" width=500height=400></td>
+    <td><img src="Pymaceuticals/Images/pymaceuticals_barplot.png" width=500 height=400></td>
     <td><img src="Pymaceuticals/Images/pymaceuticals_plyplot.png" width=500 height=400></td>
   </tr>
  </table>
    
 
-#### Pie charts showing the distribution of female versus male mice:
+## Pie charts showing the distribution of female versus male mice:
 <table>
   <tr>
     <td>Using Pandas`DataFrame.plot()` method</td>
      <td>Using Matplotlib's `pyplot` methods</td>
   </tr>
   <tr>
-    <td><img src="Pymaceuticals/Images/pymaceuticals_pieplot.png" width=500 height=400></td>
-    <td><img src="Pymaceuticals/Images/pieplyplot.png" width=500 height=400></td>
+    <td><img src="Pymaceuticals/Images/pymaceuticals_pieplot.png" width=450 height=400></td>
+    <td><img src="Pymaceuticals/Images/pieplyplot.png" width=520 height=400></td>
   </tr>
  </table>
 
 
 
 
-#### Calculating Quartiles, Finding Outliers, and creatinga Box Plot 
-* Quartiles and Outliers, 
-* 
-* box plot
+# Statistical Analysis
+I calculated the final tumor volume of each mouse across four of the most promising treatment regimens: Capomulin, Ramicane, Infubinol, and Ceftamin. Then, I calculated the quartiles and IQR and determine if there are any potential outliers across all four treatment regimens:
 
-* Line plot and a scatter plot.
+## Calculating Quartiles, Finding Outliers and plotting the results
+![Screenshot 2022-08-25 at 16 44 23](https://user-images.githubusercontent.com/67019030/186710609-8fa0d63f-e03c-460b-8a90-b3b966c1e254.png)
+
+* Box plot of the final tumor volume of each mouse across four regimens of interest.
+
+![Screenshot 2022-08-25 at 16 46 48](https://user-images.githubusercontent.com/67019030/186711743-15dcf4c3-a60d-4244-b829-dcdba9df2432.png)
+
+
+* Line plot
+
+![Screenshot 2022-08-25 at 16 50 17](https://user-images.githubusercontent.com/67019030/186712561-757e5358-4315-40da-b96b-15a35391d611.png)
+
+* Scatter plot
+
+![Screenshot 2022-08-25 at 16 49 45](https://user-images.githubusercontent.com/67019030/186712615-6726f34c-d7b6-4910-b8e2-605bf5b2b00e.png)
+
 
 * Calculating correlation and regression. 
 
+![Screenshot 2022-08-25 at 17 55 46](https://user-images.githubusercontent.com/67019030/186725463-6439f5f9-989d-4e7f-a38e-f90051c5b74a.png)
+
+
+![Screenshot 2022-08-25 at 17 57 04](https://user-images.githubusercontent.com/67019030/186725531-58910d6e-6728-4849-9dc7-76921ab537a4.png)
 
 
 
 
 
+# Analysis 
 
+### Observations and Insights
+Using Panda and Matplotlib I investigated the two datasets after merging them into one PandDataframe and then cleaning the data. After plotting and calculating this data I have concluded that:
 
-1. I calculated the final tumor volume of each mouse across four of the most promising treatment regimens: Capomulin, Ramicane, Infubinol, and Ceftamin. Then, I calculated the quartiles and IQR and determine if there are any potential outliers across all four treatment regimens:
+* There is somewhat of a medium correlation between the Tumor Volume and Weight, further plotting them reveals that there is no clear correlation between them
 
-    * A grouped DataFrame that shows the last (greatest) time point for each mouse. 
-    * Merged the grouped DataFrame with the original cleaned DataFrame.
-    * Determine outliers by using the upper and lower bounds, and then print the results.
-    
-2. Using Matplotlib, generate a box plot of the final tumor volume for all four treatment regimens. Highlight any potential outliers in the plot by changing their color and style.
+* Out of the six outliers 5 are female and only 1 is male. Of these 5 females, 4 are considerable younger than the other 2 mice. And these 4 are under the following Drug Regimen
+  - Propriva x 2(both are above the upper_bound of tumor volume)
+  - Capomulin x 2(both are below lower_bound of tumor volume) 
 
-  **Hint**: All four box plots should be within the same figure. Use this [Matplotlib documentation page](https://matplotlib.org/gallery/pyplots/boxplot_demo_pyplot.html#sphx-glr-gallery-pyplots-boxplot-demo-pyplot-py) for help with changing the style of the outliers.
+* There is an even distribution of male vs female mice
 
-### Create a Line Plot and a Scatter Plot
-
-1. Select a mouse that was treated with Capomulin and generate a line plot of tumor volume vs. time point for that mouse.
-
-2. Generate a scatter plot of tumor volume versus mouse weight for the Capomulin treatment regimen.
-
-### Calculate Correlation and Regression
-
-1. Calculate the correlation coefficient and linear regression model between mouse weight and average tumor volume for the Capomulin treatment. 
-
-2. Plot the linear regression model on top of the previous scatter plot.
+* Ramicane and Capomulin have the heighest total number of timpoints
+Capomulin may have the best result but that would need investigating further.
